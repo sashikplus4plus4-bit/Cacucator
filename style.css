@@ -1,0 +1,224 @@
+/* ========== СТИЛИ И АНИМАЦИИ ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Courier New', monospace;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #0b0c1e 0%, #1a1f3a 50%, #2a1e3a 100%);
+    padding: 10px;
+    margin: 0;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    padding: 18px;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(120, 220, 255, 0.15);
+}
+
+.display-container {
+    background-color: #0a0c0f;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    border: 2px solid #22ff9e;
+    box-shadow: 0 0 15px #22ff9e88;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+#display {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #2effa0;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    text-align: right;
+    text-shadow: 0 0 8px #22ff9e;
+    pointer-events: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+button {
+    background: #2f3349;
+    border: none;
+    border-radius: 18px;
+    padding: 16px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #eaf4ff;
+    box-shadow: 0 4px 0 #131725;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 55px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #131725;
+    filter: brightness(1.3);
+}
+
+button.operator {
+    background: #ff8c42;
+    box-shadow: 0 4px 0 #b14508;
+    color: #1e0b00;
+}
+
+button.clear {
+    background: #d33c3c;
+    box-shadow: 0 4px 0 #891f1f;
+    color: white;
+}
+
+button.equals {
+    background: #2acf5e;
+    box-shadow: 0 4px 0 #178236;
+    color: #001a09;
+    font-size: 1.8rem;
+    grid-column: span 2;
+}
+
+button.backspace {
+    background: #b85b1e;
+    box-shadow: 0 4px 0 #6a3512;
+    color: #ffe3c9;
+}
+
+button.zero {
+    grid-column: span 2;
+    background: #3f445b;
+}
+
+.philosophy-message {
+    background: #1e1a2b;
+    border-left: 6px solid #aa8cff;
+    color: #d0c0ff;
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    font-style: italic;
+    word-break: break-word;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% { border-left-color: #aa8cff; }
+    50% { border-left-color: #cc8cff; box-shadow: 0 0 15px #aa8cff; }
+    100% { border-left-color: #aa8cff; }
+}
+
+.hotkeys-container {
+    margin-top: 15px;
+    border-top: 1px solid #3a3a5a;
+    padding-top: 10px;
+}
+
+.hotkeys-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #b9b9dd;
+    font-size: 0.95rem;
+    padding: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    user-select: none;
+}
+
+.hotkeys-toggle:active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.arrow {
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+}
+
+.arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.hotkeys-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    background: rgba(20, 20, 35, 0.8);
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hotkeys-panel.expanded {
+    max-height: 300px;
+    margin-top: 10px;
+    padding: 12px;
+}
+
+.hotkeys-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 10px;
+    color: #d0d0ff;
+}
+
+.hotkey-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+}
+
+.hotkey-key {
+    background: #2f3349;
+    padding: 3px 6px;
+    border-radius: 6px;
+    color: #22ff9e;
+    border: 1px solid #22ff9e66;
+    min-width: 38px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .calculator { padding: 12px; }
+    button { 
+        padding: 12px 0; 
+        font-size: 1.2rem; 
+        min-height: 45px;
+        border-radius: 14px;
+    }
+    #display { font-size: 1.8rem; }
+}

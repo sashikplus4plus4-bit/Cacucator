@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Нео-философский калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div id="philosophyMessage" class="philosophy-message" style="display: none;"></div>
+
+        <div class="display-container" id="displayContainer">
+            <input type="text" id="display" readonly value="0">
+        </div>
+
+        <div class="buttons" id="buttonsContainer">
+            <!-- Строка 1 -->
+            <button class="clear" data-action="C">C</button>
+            <button class="backspace" data-action="⌫">⌫</button>
+            <button class="operator" data-action="(">(</button>
+            <button class="operator" data-action=")">)</button>
+            <button class="operator" data-action="÷">÷</button>
+
+            <!-- Строка 2 -->
+            <button class="operator" data-action="√">√</button>
+            <button class="operator" data-action="+">+</button>
+            <button class="digit" data-action="7">7</button>
+            <button class="digit" data-action="8">8</button>
+            <button class="digit" data-action="9">9</button>
+
+            <!-- Строка 3 -->
+            <button class="operator" data-action="n!">n!</button>
+            <button class="operator" data-action="×">×</button>
+            <button class="digit" data-action="4">4</button>
+            <button class="digit" data-action="5">5</button>
+            <button class="digit" data-action="6">6</button>
+
+            <!-- Строка 4 -->
+            <button class="operator" data-action="x^y">x^y</button>
+            <button class="operator" data-action="−">−</button>
+            <button class="digit" data-action="1">1</button>
+            <button class="digit" data-action="2">2</button>
+            <button class="digit" data-action="3">3</button>
+
+            <!-- Строка 5 -->
+            <button class="equals" data-action="=">=</button>
+            <button class="digit" data-action=".">.</button>
+            <button class="digit zero" data-action="0">0</button>
+        </div>
+
+        <div class="hotkeys-container">
+            <div class="hotkeys-toggle" id="hotkeysToggle">
+                <span class="arrow" id="arrow">▶</span>
+                <span>Горячие клавиши</span>
+            </div>
+            <div class="hotkeys-panel" id="hotkeysPanel">
+                <div class="hotkeys-grid">
+                    <div class="hotkey-item"><span class="hotkey-key">0-9</span><span>Цифры</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">.</span><span>Точка</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">+</span><span>Плюс</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">-</span><span>Минус</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">*</span><span>Умнож.</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">/</span><span>Делен.</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">(</span><span>Скобка</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">)</span><span>Скобка</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">^</span><span>Степень</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">!</span><span>Факториал</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">R/r</span><span>Корень</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">Enter</span><span>=</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">Esc</span><span>Очистка</span></div>
+                    <div class="hotkey-item"><span class="hotkey-key">⌫</span><span>Удалить</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
